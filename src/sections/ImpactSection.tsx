@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ImpactSection = () => {
+  const img = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
   const sectionRef = useRef<HTMLElement>(null);
   const labelRef = useRef<HTMLSpanElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -124,12 +125,12 @@ const ImpactSection = () => {
 
   const cards = [
     {
-      image: '/images/impact_seedling.jpg',
+      image: img('impact_seedling.jpg'),
       title: 'Farmer-first design',
       description: 'Enrollment is just the start. We optimize for 5-year retention with training, inputs, and transparent revenue sharing.',
     },
     {
-      image: '/images/impact_team_meeting.jpg',
+      image: img('impact_team_meeting.jpg'),
       title: 'Compliance-grade MRV',
       description: 'From GPS baselines to satellite checks, our data package is built for Article 6.2 authorization.',
     },

@@ -6,6 +6,7 @@ import { ChevronDown } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+  const img = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
@@ -138,7 +139,7 @@ const HeroSection = () => {
         style={{ opacity: 0 }}
       >
         <img
-          src="/images/hero_farmland_aerial.jpg"
+          src={img('hero_farmland_aerial.jpg')}
           alt="Farmland aerial view"
           className="w-full h-full object-cover"
         />
@@ -152,7 +153,7 @@ const HeroSection = () => {
         style={{ opacity: 0 }}
       >
         <img
-          src="/images/hero_farmland_aerial.jpg"
+          src={img('hero_farmland_aerial.jpg')}
           alt="Farmland portal"
           className="w-full h-full object-cover"
         />

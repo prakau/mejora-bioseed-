@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const OpportunitySection = () => {
+  const img = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -146,7 +147,7 @@ const OpportunitySection = () => {
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 w-full h-full">
         <img
-          src="/images/hero_farmland_aerial.jpg"
+          src={img('hero_farmland_aerial.jpg')}
           alt="Farmland"
           className="w-full h-full object-cover"
         />
@@ -188,7 +189,7 @@ const OpportunitySection = () => {
         className="absolute right-[7vw] top-1/2 -translate-y-1/2 w-[34vmin] h-[34vmin] circle-mask shadow-card"
       >
         <img
-          src="/images/opportunity_hands_biochar.jpg"
+          src={img('opportunity_hands_biochar.jpg')}
           alt="Hands holding biochar"
           className="w-full h-full object-cover"
         />

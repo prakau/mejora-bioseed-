@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TechnologySection = () => {
+  const img = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -164,7 +165,7 @@ const TechnologySection = () => {
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 w-full h-full">
         <img
-          src="/images/tech_farmland_rows.jpg"
+          src={img('tech_farmland_rows.jpg')}
           alt="Farmland rows"
           className="w-full h-full object-cover"
         />
@@ -219,7 +220,7 @@ const TechnologySection = () => {
         className="absolute right-[7vw] top-1/2 -translate-y-1/2 w-[34vmin] h-[34vmin] circle-mask shadow-card"
       >
         <img
-          src="/images/tech_phone_map.jpg"
+          src={img('tech_phone_map.jpg')}
           alt="Phone with farm map"
           className="w-full h-full object-cover"
         />
