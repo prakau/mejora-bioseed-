@@ -38,6 +38,9 @@ function App() {
       ScrollTrigger.create({
         snap: {
           snapTo: (value: number) => {
+            // Avoid snapping on initial load (keeps the hero and nav from jumping).
+            if (value < 0.02) return value;
+
             const inPinned = pinnedRanges.some(
               r => value >= r.start - 0.02 && value <= r.end + 0.02
             );
@@ -52,9 +55,9 @@ function App() {
             );
             return target;
           },
-          duration: { min: 0.15, max: 0.35 },
-          delay: 0,
-          ease: 'power2.out',
+          duration: { min: 0.25, max: 0.6 },
+          delay: 0.08,
+          ease: 'power3.out',
         },
       });
     }, 500);

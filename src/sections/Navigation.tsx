@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,10 +23,38 @@ const Navigation = () => {
     };
   }, []);
 
+  const smoothScrollTo = (top: number) => {
+    const start = window.scrollY;
+    const delta = top - start;
+    const durationMs = 900;
+    const t0 = performance.now();
+
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - t0) / durationMs);
+      window.scrollTo(0, start + delta * easeInOutCubic(t));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const pinned = ScrollTrigger.getAll().find(
+        (st) => st.vars?.pin && st.vars?.trigger === element
+      );
+
+      // For pinned sections, scroll to a stable point (midway through the pin range)
+      // so the section feels like a fixed "page" instead of landing mid-transition.
+      const targetTop = pinned
+        ? pinned.start + (pinned.end - pinned.start) * 0.5 + 1
+        : element.getBoundingClientRect().top + window.scrollY;
+
+      smoothScrollTo(targetTop);
     }
   };
 
@@ -65,7 +94,7 @@ const Navigation = () => {
             />
           </svg>
           <span className="font-display font-bold text-lg text-mejora-cream tracking-tight">
-            Mejora
+            Mejora Bioseed
           </span>
         </div>
 

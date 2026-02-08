@@ -123,7 +123,13 @@ const HeroSection = () => {
   const scrollToApproach = () => {
     const element = document.getElementById('opportunity');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const pinned = ScrollTrigger.getAll().find(
+        (st) => st.vars?.pin && st.vars?.trigger === element
+      );
+      const targetTop = pinned
+        ? pinned.start + (pinned.end - pinned.start) * 0.5 + 1
+        : element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
     }
   };
 
@@ -162,7 +168,7 @@ const HeroSection = () => {
       {/* Headline */}
       <div
         ref={headlineRef}
-        className="absolute left-1/2 top-[78vh] -translate-x-1/2 text-center"
+        className="absolute left-1/2 bottom-[clamp(6.25rem,16vh,10.5rem)] -translate-x-1/2 text-center px-6"
       >
         <h1 className="font-display font-black uppercase text-mejora-cream headline-xl">
           <span className="headline-line block">Carbon Removal</span>
@@ -174,7 +180,7 @@ const HeroSection = () => {
       <button
         ref={ctaRef}
         onClick={scrollToApproach}
-        className="absolute left-1/2 top-[90vh] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer"
+        className="absolute left-1/2 bottom-[clamp(1.25rem,5vh,3rem)] -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer"
         style={{ opacity: 0 }}
       >
         <span className="font-mono text-xs uppercase tracking-[0.12em] text-mejora-cream/80 group-hover:text-mejora-gold transition-colors">

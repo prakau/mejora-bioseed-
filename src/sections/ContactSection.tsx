@@ -137,7 +137,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 text-mejora-gold" />
                 </div>
                 <span className="font-body text-mejora-cream">
-                  contact@mejorabioseed.com
+                  mejorabioseed@gmail.com
                 </span>
               </div>
 
@@ -279,7 +279,7 @@ const ContactSection = () => {
           </div>
 
           <p className="font-body text-sm text-mejora-parchment/50">
-            © Mejora Bioseed Industries. All rights reserved.
+            © Mejora Bioseed Industries Limited. All rights reserved.
           </p>
 
           <p className="font-mono text-xs uppercase tracking-[0.08em] text-mejora-parchment/50">
