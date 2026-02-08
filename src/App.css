@@ -1,0 +1,81 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Pin spacer fix for GSAP */
+.pin-spacer {
+  pointer-events: none !important;
+}
+
+.pin-spacer > * {
+  pointer-events: auto !important;
+}
+
+/* Section stacking */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Circle mask enhancement */
+.circle-mask {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Text rendering optimization */
+.font-display {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(214, 162, 58, 0.3);
+  color: #F6F2EA;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #D6A23A;
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[src=""] {
+  opacity: 0;
+}
+
+/* Mobile touch optimization */
+@media (pointer: coarse) {
+  .nav-link::after {
+    display: none;
+  }
+  
+  .btn-primary:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-slow-rotate {
+    animation: none !important;
+  }
+}
