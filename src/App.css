@@ -53,6 +53,16 @@ img[src=""] {
   opacity: 0;
 }
 
+/* Section cross-fade overlay */
+.page-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 30, 26, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 80;
+}
+
 /* Mobile touch optimization */
 @media (pointer: coarse) {
   .nav-link::after {

@@ -74,8 +74,8 @@ const TechnologySection = () => {
       // Circle from right
       scrollTl.fromTo(
         circle,
-        { x: '45vw', scale: 0.85, opacity: 0 },
-        { x: 0, scale: 1, opacity: 1, ease: 'none' },
+        { x: '45vw', scale: 0.95, opacity: 0 },
+        { x: 0, scale: 1, opacity: 1, ease: 'power2.out' },
         0.06
       );
 
@@ -187,7 +187,7 @@ const TechnologySection = () => {
           ref={subheadlineRef}
           className="mt-8 font-body text-lg text-mejora-cream/90 leading-relaxed max-w-[34vw]"
         >
-          Monitoring, reporting, and verification built for compliance markets.
+          Monitoring, reporting, and verification built for global markets.
         </p>
 
         {/* Body */}
@@ -197,8 +197,8 @@ const TechnologySection = () => {
         >
           We map farms with GPS precision, track inputs and activities, model carbon 
           sequestration, and package evidence—so buyers get audit-ready credits and 
-          farmers get paid faster. Our MRV infrastructure is designed to meet Article 6.2 
-          authorization requirements.
+          farmers get paid faster. Our MRV infrastructure is designed to scale across 
+          regions as our programs grow.
         </p>
 
         {/* Features */}

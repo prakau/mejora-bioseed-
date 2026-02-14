@@ -37,35 +37,19 @@ const OpportunitySection = () => {
       });
 
       // Phase 1 — ENTRANCE (0%–30%)
-      // Headline from left
+      // Headline, subheadline, and body with stagger
       scrollTl.fromTo(
-        headline,
-        { x: '-40vw', opacity: 0 },
-        { x: 0, opacity: 1, ease: 'none' },
-        0
-      );
-
-      // Subheadline from left
-      scrollTl.fromTo(
-        subheadline,
-        { x: '-18vw', opacity: 0 },
-        { x: 0, opacity: 1, ease: 'none' },
-        0.08
-      );
-
-      // Body from left
-      scrollTl.fromTo(
-        body,
-        { x: '-18vw', opacity: 0 },
-        { x: 0, opacity: 1, ease: 'none' },
-        0.14
+        [headline, subheadline, body],
+        { x: '-22vw', opacity: 0 },
+        { x: 0, opacity: 1, ease: 'power2.out', duration: 0.8, stagger: 0.12 },
+        0.02
       );
 
       // Circle from right
       scrollTl.fromTo(
         circle,
         { x: '45vw', scale: 0.85, opacity: 0 },
-        { x: 0, scale: 1, opacity: 1, ease: 'none' },
+        { x: 0, scale: 1, opacity: 1, ease: 'power2.out' },
         0.06
       );
 
@@ -73,7 +57,7 @@ const OpportunitySection = () => {
       scrollTl.fromTo(
         caption,
         { y: 18, opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
+        { y: 0, opacity: 1, ease: 'power2.out', duration: 0.6 },
         0.18
       );
 
@@ -159,8 +143,8 @@ const OpportunitySection = () => {
         {/* Headline */}
         <div ref={headlineRef}>
           <h2 className="font-display font-black uppercase text-mejora-cream headline-lg">
-            <span className="block">A $950B</span>
-            <span className="block text-mejora-gold">Compliance Market</span>
+            <span className="block">A Global Climate</span>
+            <span className="block text-mejora-gold">Agri Platform</span>
           </h2>
         </div>
 
@@ -169,7 +153,7 @@ const OpportunitySection = () => {
           ref={subheadlineRef}
           className="mt-8 font-body text-lg text-mejora-cream/90 leading-relaxed max-w-[34vw]"
         >
-          Article 6.2 of the Paris Agreement creates a new class of sovereign-backed carbon assets.
+          We are building a new kind of climate-smart agriculture company with roots in Africa and a long-term vision across India and beyond.
         </p>
 
         {/* Body */}
@@ -177,9 +161,7 @@ const OpportunitySection = () => {
           ref={bodyRef}
           className="mt-6 font-body text-base text-mejora-parchment/80 leading-relaxed max-w-[34vw]"
         >
-          We originate ITMOs—Internationally Transferred Mitigation Outcomes—backed by Ghana's 
-          authorization and designed for Singapore's compliance demand. While voluntary credits 
-          trade at $5-15/ton, Article 6.2 ITMOs command $20-35/ton with mandatory demand.
+          Our focus is on scalable farm programs, local manufacturing, and verified outcomes that improve soil health and farmer incomes. We are early in the journey, expanding step by step with strong regional partnerships.
         </p>
       </div>
 

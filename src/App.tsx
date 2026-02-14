@@ -17,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const mainRef = useRef<HTMLDivElement>(null);
+  const fadeRef = useRef<HTMLDivElement>(null);
 
   // Global snap for pinned sections
   useEffect(() => {
@@ -67,6 +68,39 @@ function App() {
     };
   }, []);
 
+  // Cross-fade between pinned sections
+  useLayoutEffect(() => {
+    const overlay = fadeRef.current;
+    if (!overlay) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('.section-pinned'));
+    if (sections.length === 0) return;
+
+    const timelines = sections.map((section) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: '+=130%',
+          scrub: true,
+        },
+      });
+
+      tl.to(overlay, { opacity: 0.35, ease: 'none', duration: 0.2 }, 0.72);
+      tl.to(overlay, { opacity: 0, ease: 'none', duration: 0.2 }, 0.92);
+
+      return tl;
+    });
+
+    return () => {
+      timelines.forEach((tl) => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      });
+    };
+  }, []);
+
   // Cleanup on unmount
   useLayoutEffect(() => {
     return () => {
@@ -78,6 +112,9 @@ function App() {
     <div ref={mainRef} className="relative">
       {/* Noise overlay */}
       <div className="noise-overlay" />
+
+      {/* Cross-fade overlay */}
+      <div ref={fadeRef} className="page-fade-overlay" />
       
       {/* Navigation */}
       <Navigation />

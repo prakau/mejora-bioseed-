@@ -283,7 +283,7 @@ const ContactSection = () => {
           </p>
 
           <p className="font-mono text-xs uppercase tracking-[0.08em] text-mejora-parchment/50">
-            Ghana's First Article 6.2-Authorized Carbon Credit Originator
+            Global climate-smart agriculture, starting in Africa.
           </p>
         </div>
       </div>

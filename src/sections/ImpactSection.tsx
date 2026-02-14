@@ -131,8 +131,8 @@ const ImpactSection = () => {
     },
     {
       image: img('impact_team_meeting.jpg'),
-      title: 'Compliance-grade MRV',
-      description: 'From GPS baselines to satellite checks, our data package is built for Article 6.2 authorization.',
+      title: 'Transparent MRV',
+      description: 'From GPS baselines to satellite checks, our data package supports transparent, scalable verification.',
     },
   ];
 
@@ -228,7 +228,7 @@ const ImpactSection = () => {
             { value: '$280', label: 'Revenue per Farmer' },
             { value: '66%', label: 'Gross Margin' },
             { value: '20+', label: 'Years Sequestration' },
-            { value: '$20-35', label: 'ITMO Price per Ton' },
+            { value: '2', label: 'Partner Regions' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <span className="font-display font-bold text-2xl text-mejora-gold">

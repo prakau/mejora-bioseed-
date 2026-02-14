@@ -74,8 +74,8 @@ const OperationsSection = () => {
       // Circle from right
       scrollTl.fromTo(
         circle,
-        { x: '45vw', scale: 0.85, opacity: 0 },
-        { x: 0, scale: 1, opacity: 1, ease: 'none' },
+        { x: '45vw', scale: 0.95, opacity: 0 },
+        { x: 0, scale: 1, opacity: 1, ease: 'power2.out' },
         0.06
       );
 

@@ -11,6 +11,7 @@ const ServicesSection = () => {
   const labelRef = useRef<HTMLSpanElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLParagraphElement>(null);
+  const manufacturingRef = useRef<HTMLParagraphElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
   const captionRef = useRef<HTMLParagraphElement>(null);
 
@@ -20,10 +21,11 @@ const ServicesSection = () => {
     const label = labelRef.current;
     const headline = headlineRef.current;
     const body = bodyRef.current;
+    const manufacturing = manufacturingRef.current;
     const circle = circleRef.current;
     const caption = captionRef.current;
 
-    if (!section || !bg || !label || !headline || !body || !circle || !caption) return;
+    if (!section || !bg || !label || !headline || !body || !manufacturing || !circle || !caption) return;
 
     const ctx = gsap.context(() => {
       const scrollTl = gsap.timeline({
@@ -41,31 +43,23 @@ const ServicesSection = () => {
       scrollTl.fromTo(
         label,
         { y: '-12vh', opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
+        { y: 0, opacity: 1, ease: 'power2.out', duration: 0.7 },
         0
       );
 
-      // Headline from left
+      // Headline and body with stagger
       scrollTl.fromTo(
-        headline,
-        { x: '-45vw', opacity: 0 },
-        { x: 0, opacity: 1, ease: 'none' },
+        [headline, body, manufacturing],
+        { x: '-22vw', opacity: 0 },
+        { x: 0, opacity: 1, ease: 'power2.out', duration: 0.8, stagger: 0.1 },
         0.06
-      );
-
-      // Body from left
-      scrollTl.fromTo(
-        body,
-        { x: '-18vw', opacity: 0 },
-        { x: 0, opacity: 1, ease: 'none' },
-        0.14
       );
 
       // Circle from right
       scrollTl.fromTo(
         circle,
         { x: '45vw', scale: 0.85, opacity: 0 },
-        { x: 0, scale: 1, opacity: 1, ease: 'none' },
+        { x: 0, scale: 1, opacity: 1, ease: 'power2.out' },
         0.08
       );
 
@@ -73,7 +67,7 @@ const ServicesSection = () => {
       scrollTl.fromTo(
         caption,
         { y: 18, opacity: 0 },
-        { y: 0, opacity: 1, ease: 'none' },
+        { y: 0, opacity: 1, ease: 'power2.out', duration: 0.6 },
         0.18
       );
 
@@ -180,6 +174,12 @@ const ServicesSection = () => {
           soil amendment—improving yields while locking away CO₂ for centuries. Biochar 
           provides immediate carbon removal credits, generating cash flow while our 
           agroforestry plantings mature.
+        </p>
+        <p
+          ref={manufacturingRef}
+          className="mt-4 font-body text-base text-mejora-parchment/80 leading-relaxed max-w-[36vw]"
+        >
+          We also develop agri manufacturing capabilities to produce soil inputs and field tools locally, strengthening supply chains as we scale.
         </p>
 
         {/* Dual revenue highlight */}
