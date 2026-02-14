@@ -275,11 +275,11 @@ const ContactSection = () => {
               <circle cx="22" cy="22" r="20" stroke="#F6F2EA" strokeWidth="1.5" fill="none" />
               <circle cx="22" cy="22" r="14" stroke="#D6A23A" strokeWidth="1.5" fill="none" />
             </svg>
-            <span className="font-display font-bold text-mejora-cream">Mejora</span>
+            <span className="font-display font-bold text-mejora-cream">MEJORA BIO-INDUSTRIES LTD</span>
           </div>
 
           <p className="font-body text-sm text-mejora-parchment/50">
-            © Mejora Bioseed Industries Limited. All rights reserved.
+            © MEJORA BIO-INDUSTRIES LTD. All rights reserved.
           </p>
 
           <p className="font-mono text-xs uppercase tracking-[0.08em] text-mejora-parchment/50">

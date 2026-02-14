@@ -94,7 +94,7 @@ const Navigation = () => {
             />
           </svg>
           <span className="font-display font-bold text-lg text-mejora-cream tracking-tight">
-            Mejora Bioseed
+            MEJORA BIO-INDUSTRIES LTD
           </span>
         </div>
 
