@@ -53,6 +53,11 @@ img[src=""] {
   opacity: 0;
 }
 
+/* Placeholder styling for the new logo asset */
+img[alt="MEJORA BIO-INDUSTRIES LTD logo"] {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 /* Section cross-fade overlay */
 .page-fade-overlay {
   position: fixed;

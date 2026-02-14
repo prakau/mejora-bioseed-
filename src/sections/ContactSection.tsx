@@ -10,7 +10,7 @@ const ContactSection = () => {
   const headlineRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
-  const logoSrc = `${import.meta.env.BASE_URL}images/mejora-logo.svg`;
+  const logoSrc = `${import.meta.env.BASE_URL}images/logo.png`;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -269,7 +269,7 @@ const ContactSection = () => {
             <img
               src={logoSrc}
               alt="MEJORA BIO-INDUSTRIES LTD logo"
-              className="h-8 w-8"
+              className="h-8 w-12 object-contain"
               loading="lazy"
             />
             <span className="font-display font-bold text-mejora-cream">MEJORA BIO-INDUSTRIES LTD</span>

@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const logoSrc = `${import.meta.env.BASE_URL}images/mejora-logo.svg`;
+  const logoSrc = `${import.meta.env.BASE_URL}images/logo.png`;
 
   useEffect(() => {
     // Show navigation after initial hero load
@@ -72,7 +72,7 @@ const Navigation = () => {
           <img
             src={logoSrc}
             alt="MEJORA BIO-INDUSTRIES LTD logo"
-            className="h-11 w-11 flex-shrink-0"
+            className="h-10 w-16 flex-shrink-0 object-contain"
             loading="eager"
           />
           <span className="font-display font-bold text-lg text-mejora-cream tracking-tight">
