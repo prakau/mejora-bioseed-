@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const logoSrc = `${import.meta.env.BASE_URL}images/mejora-logo.svg`;
 
   useEffect(() => {
     // Show navigation after initial hero load
@@ -67,32 +68,13 @@ const Navigation = () => {
       <div className="flex items-center justify-between px-[6vw] py-[2.5vh]">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          {/* Circle logo mark */}
-          <svg
-            width="44"
-            height="44"
-            viewBox="0 0 44 44"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="flex-shrink-0"
-          >
-            <circle
-              cx="22"
-              cy="22"
-              r="20"
-              stroke="#F6F2EA"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <circle
-              cx="22"
-              cy="22"
-              r="14"
-              stroke="#D6A23A"
-              strokeWidth="1.5"
-              fill="none"
-            />
-          </svg>
+          {/* Logo mark */}
+          <img
+            src={logoSrc}
+            alt="MEJORA BIO-INDUSTRIES LTD logo"
+            className="h-11 w-11 flex-shrink-0"
+            loading="eager"
+          />
           <span className="font-display font-bold text-lg text-mejora-cream tracking-tight">
             MEJORA BIO-INDUSTRIES LTD
           </span>

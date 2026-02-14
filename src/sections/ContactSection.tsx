@@ -10,6 +10,7 @@ const ContactSection = () => {
   const headlineRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
+  const logoSrc = `${import.meta.env.BASE_URL}images/mejora-logo.svg`;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -265,16 +266,12 @@ const ContactSection = () => {
       <div className="mt-20 px-[7vw] pt-8 border-t border-mejora-cream/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 44 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="22" cy="22" r="20" stroke="#F6F2EA" strokeWidth="1.5" fill="none" />
-              <circle cx="22" cy="22" r="14" stroke="#D6A23A" strokeWidth="1.5" fill="none" />
-            </svg>
+            <img
+              src={logoSrc}
+              alt="MEJORA BIO-INDUSTRIES LTD logo"
+              className="h-8 w-8"
+              loading="lazy"
+            />
             <span className="font-display font-bold text-mejora-cream">MEJORA BIO-INDUSTRIES LTD</span>
           </div>
 
